@@ -448,7 +448,7 @@ final class Configurator
         $segments = explode(DIRECTORY_SEPARATOR, $relativePath);
 
         return in_array($segments[0] ?? '', ['.git', 'vendor', 'node_modules'], true)
-            || $relativePath === basename(__FILE__);
+            || in_array($relativePath, [basename(__FILE__), 'add-function.php'], true);
     }
 
     private function removeEmptyPlaceholderDirectories(): void
