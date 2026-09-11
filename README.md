@@ -57,7 +57,7 @@ resources/android/   Kotlin bridge implementation copied into Android builds
 resources/ios/       Swift bridge implementation copied into iOS builds
 android/             Android module starter and packaging notes
 ios/                 iOS module starter and packaging notes
-stubs/               Files for future scaffolding automation
+stubs/               Templates used by add-function.php to scaffold new bridge functions
 tests/               Pest tests for PHP and manifest behavior
 docs/                Maintainer and user documentation
 .github/             Issue templates, workflows, release automation
@@ -109,16 +109,12 @@ composer test
 composer lint
 ```
 
-## Future Automation
+## Adding Bridge Functions
 
-The `stubs/` directory is designed for a future companion scaffolder such as `nativephp-plugin-maker`.
-
-Possible workflows:
+Once the template is configured, add a new bridge function with one command:
 
 ```bash
-composer create-project {{ vendor }}/nativephp-plugin-template my-plugin
+php add-function.php --name=Level --description="Reads the battery level."
 ```
 
-```bash
-nativephp-plugin new Battery
-```
+This adds the manifest entry, the contract method, the `Plugin` implementation, the facade `@method` line, the Kotlin and Swift bridge classes, and a Pest test — see `docs/bridge-functions.md` for what each file gets and the available flags (`--skip-android`, `--skip-ios`, `--dry-run`, `--no-interaction`).

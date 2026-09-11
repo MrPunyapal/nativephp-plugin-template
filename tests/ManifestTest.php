@@ -13,11 +13,13 @@ it('ships a valid NativePHP manifest', function (): void {
     $manifest = json_decode((string) file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
     $typedManifest = new Manifest($manifest);
 
+    $example = collect($typedManifest->bridgeFunctions())->firstWhere('name', '{{ plugin }}.Example');
+
     expect($typedManifest->namespace())->toBe('{{ plugin }}')
-        ->and($typedManifest->bridgeFunctions())->toHaveCount(1)
-        ->and($typedManifest->bridgeFunctions()[0]['name'])->toBe('{{ plugin }}.Example')
-        ->and($typedManifest->bridgeFunctions()[0]['android'])->toContain('{{ plugin }}Functions.Example')
-        ->and($typedManifest->bridgeFunctions()[0]['ios'])->toBe('{{ plugin }}Functions.Example');
+        ->and($typedManifest->bridgeFunctions())->not->toBeEmpty()
+        ->and($example)->not->toBeNull()
+        ->and($example['android'])->toContain('{{ plugin }}Functions.Example')
+        ->and($example['ios'])->toBe('{{ plugin }}Functions.Example');
 });
 
 it('documents every required replacement placeholder', function (): void {

@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+use {{ namespace }}\Facades\{{ plugin }};
+
+it('calls the {{ plugin }}.{{ function }} bridge function', function (): void {
+    $bridge = new class
+    {
+        /**
+         * @param array<string, mixed> $payload
+         * @return array<string, mixed>
+         */
+        public function call(string $function, array $payload): array
+        {
+            return [
+                'function' => $function,
+                'payload' => $payload,
+            ];
+        }
+    };
+
+    app()->instance('nativephp.mobile.bridge', $bridge);
+
+    expect({{ plugin }}::{{ function_camel }}(['message' => 'test']))->toBe([
+        'function' => '{{ plugin }}.{{ function }}',
+        'payload' => ['message' => 'test'],
+    ]);
+});
