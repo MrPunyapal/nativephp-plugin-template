@@ -8,7 +8,7 @@ The format is based on Keep a Changelog and this project follows semantic versio
 
 ### Added
 
-- Initial NativePHP Mobile plugin template structure.
+- Initial NativePHP Mobile v3 and v4 plugin template structure.
 - PHP service provider, facade, contract, event, and manifest support.
 - Android and iOS bridge starter implementations.
 - Stubs for future scaffolding automation.
