@@ -8,7 +8,7 @@ use Closure;
 use PHPUnit\Framework\Assert;
 use RuntimeException;
 
-final class BridgeFake
+final readonly class BridgeFake
 {
     private bool $preventStrayCalls = false;
 
