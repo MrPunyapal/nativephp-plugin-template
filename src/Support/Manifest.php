@@ -6,13 +6,13 @@ namespace {{ namespace }}\Support;
 
 use InvalidArgumentException;
 
-final readonly class Manifest
+final class Manifest
 {
     /**
      * @param array<string, mixed> $manifest
      */
     public function __construct(
-        private array $manifest,
+        private readonly array $manifest,
     ) {
     }
 
