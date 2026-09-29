@@ -7,14 +7,17 @@ namespace {{ namespace }}\Events;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-final readonly class {{ plugin }}Event
+final class {{ plugin }}Event
 {
     use Dispatchable;
     use SerializesModels;
 
-    /** @param array<string, mixed> $payload */
+    /**
+     * @param array<string, mixed> $payload
+     */
     public function __construct(
-        public string $name,
-        public array $payload = [],
-    ) {}
+        public readonly string $name,
+        public readonly array $payload = [],
+    ) {
+    }
 }
