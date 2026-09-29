@@ -1,6 +1,6 @@
 # NativePHP Manifest Fields
 
-This file documents the `nativephp.json` placeholders used by `{{ vendor }}/{{ package }}`.
+This file documents the `nativephp.json` placeholders used by `{{ vendor }}/{{ package }}` for NativePHP Mobile v3 and v4.
 
 | Placeholder | Meaning |
 | --- | --- |

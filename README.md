@@ -1,6 +1,6 @@
 # NativePHP Mobile Plugin Template
 
-`{{ vendor }}/{{ package }}` is a reusable, production-oriented starter kit for building NativePHP Mobile v3 plugins.
+`{{ vendor }}/{{ package }}` is a reusable, production-oriented starter kit for building NativePHP Mobile v3 and v4 plugins.
 
 This repository is not a demo plugin and not a sample app. It is a template that can be cloned, renamed, and published as a real NativePHP plugin after replacing placeholders.
 
@@ -16,7 +16,7 @@ Replace every placeholder before publishing:
 | `{{ namespace }}` | PHP namespace, for example `Acme\\MobileBattery`. |
 | `{{ description }}` | Short package description. |
 
-## How NativePHP Plugins Work
+## NativePHP Mobile v3 and v4\n\nThe template supports `nativephp/mobile` v3 and v4. The manifest format and bridge source layout are shared by the versions supported here.\n\nKeep the generated package dependency as `^3.0|^4.0` unless the plugin intentionally targets a single NativePHP Mobile version.\n\n## How NativePHP Plugins Work
 
 NativePHP Mobile plugins are Composer packages with `type: nativephp-plugin`.
 
