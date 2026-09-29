@@ -1,6 +1,6 @@
 # FAQ
 
-## Is this a demo plugin?
+## Which NativePHP Mobile versions does this support?\n\nThe template supports NativePHP Mobile v3 and v4. Generated packages use `nativephp/mobile` `^3.0|^4.0` by default.\n\n## Is this a demo plugin?
 
 No. `{{ vendor }}/{{ package }}` is a reusable template for building plugins.
 
