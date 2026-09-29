@@ -10,10 +10,10 @@ use InvalidArgumentException;
 use RuntimeException;
 use {{ namespace }}\Contracts\{{ plugin }}Contract;
 
-final readonly class Plugin implements {{ plugin }}Contract
+final class Plugin implements {{ plugin }}Contract
 {
     public function __construct(
-        private Application $app,
+        private readonly Application $app,
     ) {
     }
 
@@ -24,7 +24,7 @@ final readonly class Plugin implements {{ plugin }}Contract
 
     public function manifest(): array
     {
-        $path = __DIR__.'/../nativephp.json';
+        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'nativephp.json';
 
         if (! File::exists($path)) {
             throw new InvalidArgumentException('The {{ vendor }}/{{ package }} NativePHP manifest is missing.');
