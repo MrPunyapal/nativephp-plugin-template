@@ -5,7 +5,7 @@ declare(strict_types=1);
 use {{ namespace }}\Support\Manifest;
 
 it('ships a valid NativePHP manifest', function (): void {
-    $path = __DIR__.'/../nativephp.json';
+    $path = dirname(__DIR__).'/nativephp.json';
 
     expect($path)->toBeFile();
 
@@ -22,9 +22,9 @@ it('ships a valid NativePHP manifest', function (): void {
 
 it('documents every required replacement placeholder', function (): void {
     $files = [
-        __DIR__.'/../composer.json',
-        __DIR__.'/../nativephp.json',
-        __DIR__.'/../docs/manifest-fields.md',
+        dirname(__DIR__).'/composer.json',
+        dirname(__DIR__).'/nativephp.json',
+        dirname(__DIR__).'/docs/manifest-fields.md',
     ];
 
     foreach (['{{ vendor }}', '{{ package }}', '{{ plugin }}', '{{ namespace }}', '{{ description }}'] as $placeholder) {
