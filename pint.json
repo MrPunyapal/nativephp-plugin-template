@@ -4,10 +4,12 @@
         "android",
         "ios",
         "resources",
-        "stubs"
+        "stubs",
+        ".github"
     ],
     "notPath": [
-        "vendor"
+        "vendor",
+        "rector.php"
     ],
     "rules": {
         "declare_strict_types": true,
