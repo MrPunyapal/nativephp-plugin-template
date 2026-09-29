@@ -89,5 +89,8 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
+      - name: Format generated PHP
+        run: vendor/bin/pint
+
       - name: Run Rector
         run: composer rector:test
