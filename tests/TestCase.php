@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace {{ namespace }}\Tests;
 
+use {{ namespace }}\Providers\{{ plugin }}ServiceProvider;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as Orchestra;
-use {{ namespace }}\Providers\{{ plugin }}ServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
