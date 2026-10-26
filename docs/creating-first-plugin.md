@@ -1,6 +1,7 @@
 # Creating First Plugin
 
-1. Clone `nativephp-plugin-template`.\n2. The template supports NativePHP Mobile v3 and v4. By default, generated packages allow both with `nativephp/mobile` `^3.0|^4.0`.
+1. Clone `nativephp-plugin-template`.
+2. Confirm which NativePHP Mobile major versions the plugin will support. By default, generated packages allow both with `nativephp/mobile` `^3.0|^4.0`.
 3. Run `php configure.php`.
 4. Review `composer.json`, `nativephp.json`, PHP namespaces, and native bridge targets.
 5. Replace the template bridge function body with platform code.

@@ -16,7 +16,13 @@ Replace every placeholder before publishing:
 | `{{ namespace }}` | PHP namespace, for example `Acme\\MobileBattery`. |
 | `{{ description }}` | Short package description. |
 
-## NativePHP Mobile v3 and v4\n\nThe template supports `nativephp/mobile` v3 and v4 and requires PHP 8.3 or newer. The manifest format and bridge source layout are shared by the versions supported here.\n\nKeep the generated package dependency as `^3.0|^4.0` unless the plugin intentionally targets a single NativePHP Mobile version.\n\n## How NativePHP Plugins Work
+## NativePHP Mobile Versions
+
+The template supports NativePHP Mobile v3 and v4 and requires PHP 8.3 or newer. The generated Composer constraint is `nativephp/mobile: ^3.0|^4.0`, so applications using either major version can install the plugin. Narrow that constraint if the plugin uses an API available in only one version.
+
+Check the documentation for the NativePHP Mobile version your plugin targets before implementing native bridge behavior, since version compatibility does not guarantee every native API behaves identically.
+
+## How NativePHP Plugins Work
 
 NativePHP Mobile plugins are Composer packages with `type: nativephp-plugin`.
 
