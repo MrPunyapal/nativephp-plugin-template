@@ -335,7 +335,7 @@ final class Configurator
                 'source' => 'https://github.com/'.$github.'/'.$package,
             ],
             'require' => [
-                'php' => '^8.2',
+                'php' => '^8.3',
                 'illuminate/contracts' => '^11.0|^12.0',
                 'illuminate/support' => '^11.0|^12.0',
                 'nativephp/mobile' => '^3.0|^4.0',
