@@ -10,7 +10,6 @@ interface {{ plugin }}Contract
      * Invoke the template bridge function and return the normalized native response.
      *
      * @param array<string, mixed> $payload
-     *
      * @return array<string, mixed>
      */
     public function example(array $payload = []): array;

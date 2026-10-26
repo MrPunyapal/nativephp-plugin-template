@@ -10,7 +10,6 @@ it('registers the plugin contract and facade accessor', function (): void {
     {
         /**
          * @param array<string, mixed> $payload
-         *
          * @return array<string, mixed>
          */
         public function call(string $function, array $payload): array
