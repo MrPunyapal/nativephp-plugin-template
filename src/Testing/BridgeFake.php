@@ -26,6 +26,7 @@ final class BridgeFake
 
     /**
      * @param array<string, mixed> $payload
+     *
      * @return array<string, mixed>
      */
     public function call(string $function, array $payload): array
