@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace {{ namespace }};
 
+use {{ namespace }}\Contracts\{{ plugin }}Contract;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\File;
 use InvalidArgumentException;
 use RuntimeException;
-use {{ namespace }}\Contracts\{{ plugin }}Contract;
 
-final class Plugin implements {{ plugin }}Contract
+final readonly class Plugin implements {{ plugin }}Contract
 {
     public function __construct(
-        private readonly Application $app,
-    ) {
-    }
+        private Application $app,
+    ) {}
 
     public function example(array $payload = []): array
     {
@@ -24,7 +23,7 @@ final class Plugin implements {{ plugin }}Contract
 
     public function manifest(): array
     {
-        $path = dirname(__DIR__).DIRECTORY_SEPARATOR.'nativephp.json';
+        $path = __DIR__.'/../nativephp.json';
 
         if (! File::exists($path)) {
             throw new InvalidArgumentException('The {{ vendor }}/{{ package }} NativePHP manifest is missing.');
@@ -49,7 +48,6 @@ final class Plugin implements {{ plugin }}Contract
 
     /**
      * @param array<string, mixed> $payload
-     *
      * @return array<string, mixed>
      */
     private function callBridge(string $function, array $payload): array
