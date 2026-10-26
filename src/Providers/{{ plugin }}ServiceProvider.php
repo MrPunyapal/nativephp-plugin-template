@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace {{ namespace }}\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use {{ namespace }}\Contracts\{{ plugin }}Contract;
 use {{ namespace }}\Plugin;
+use Illuminate\Support\ServiceProvider;
 
 final class {{ plugin }}ServiceProvider extends ServiceProvider
 {
@@ -19,7 +19,7 @@ final class {{ plugin }}ServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            dirname(__DIR__, 2).'/nativephp.json' => base_path('nativephp/{{ package }}.json'),
+            __DIR__.'/../../nativephp.json' => base_path('nativephp/{{ package }}.json'),
         ], '{{ package }}-nativephp-manifest');
     }
 }
