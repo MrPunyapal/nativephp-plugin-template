@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace {{ namespace }};
 
+use {{ namespace }}\Contracts\{{ plugin }}Contract;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\File;
 use InvalidArgumentException;
 use RuntimeException;
-use {{ namespace }}\Contracts\{{ plugin }}Contract;
 
 final readonly class Plugin implements {{ plugin }}Contract
 {
     public function __construct(
         private Application $app,
-    ) {
-    }
+    ) {}
 
     public function example(array $payload = []): array
     {

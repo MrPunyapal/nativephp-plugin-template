@@ -13,8 +13,7 @@ final readonly class Manifest
      */
     public function __construct(
         private array $manifest,
-    ) {
-    }
+    ) {}
 
     public function namespace(): string
     {

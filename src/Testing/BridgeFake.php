@@ -20,13 +20,10 @@ final class BridgeFake
     /**
      * @param array<string, array<string, mixed>|Closure> $responses
      */
-    public function __construct(private array $responses = [])
-    {
-    }
+    public function __construct(private array $responses = []) {}
 
     /**
      * @param array<string, mixed> $payload
-     *
      * @return array<string, mixed>
      */
     public function call(string $function, array $payload): array

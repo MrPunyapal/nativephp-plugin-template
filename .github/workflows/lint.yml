@@ -47,12 +47,6 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
-      - name: Inspect Pint fixes (temporary)
-        run: |
-          git add -A src tests
-          vendor/bin/pint
-          git diff -- src tests
-
       - name: Run Pint
         run: vendor/bin/pint --test
 
